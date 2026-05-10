@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="Not specified"
+
+[[mods]]
+modId="project_joseon_craft"
+version="1.0.0"
+displayName="PROJECT: JOSEON CRAFT"
+displayURL="https://discord.gg/PRGHe3fshm"
+credits="PJC crew"
+authors="MCreator"
+description="tradition korean style armor&weapons"
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+[[dependencies.project_joseon_craft]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1]"
+    ordering="AFTER"
+    side="BOTH"
+
+
+
+
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration
