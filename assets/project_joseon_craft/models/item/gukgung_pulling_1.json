@@ -1,0 +1,29 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "project_joseon_craft:item/gukgung_pulling_1"
+  },
+
+  "display": {
+  "thirdperson_righthand": {
+    "rotation": [ -70, 280, -30 ],
+    "translation": [ -1.2, -2.2, 2.2 ],
+    "scale": [0.75, 0.75, 0.75 ]
+  },
+  "thirdperson_lefthand": {
+    "rotation": [ -70, -280, 30 ],
+    "translation": [ -1.2, -2.2, 2.2 ],
+    "scale": [0.75, 0.75, 0.75 ]
+  },
+  "firstperson_righthand": {
+    "rotation": [ 5, -85, 15 ],
+    "translation": [ 1.2, 3.0, 1.2 ],
+    "scale": [ 0.75, 0.75, 0.75 ]
+  },
+  "firstperson_lefthand": {
+    "rotation": [ 5, 85, -15 ],
+    "translation": [ 1.2, 3.0, 1.2 ],
+    "scale": [ 0.75, 0.75, 0.75 ]
+  }
+}
+}
