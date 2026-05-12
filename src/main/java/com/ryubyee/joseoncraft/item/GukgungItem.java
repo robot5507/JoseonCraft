@@ -2,8 +2,6 @@ package com.ryubyee.joseoncraft.item;
 
 import java.util.function.Predicate;
 
-import com.ryubyee.joseoncraft.init.ProjectJoseonCraftModItems;
-
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -31,7 +29,7 @@ public class GukgungItem extends BowItem {
 			stack.is(Items.ARROW)
 			|| stack.is(Items.SPECTRAL_ARROW)
 			|| stack.is(Items.TIPPED_ARROW)
-			|| stack.is(ProjectJoseonCraftModItems.PYEONJEON.get());
+			|| stack.is(JoseoncraftItems.PYEONJEON.get());
 	}
 
 	@Override
@@ -40,11 +38,11 @@ public class GukgungItem extends BowItem {
 			return;
 		}
 
-		boolean hasTonga = player.getOffhandItem().is(ProjectJoseonCraftModItems.TONGA.get());
+		boolean hasTonga = player.getOffhandItem().is(JoseoncraftItems.TONGA.get());
 		ItemStack ammoStack = getPreferredAmmo(player, hasTonga);
 
 		// 별도 검사
-		ItemStack pyeonjeonStack = findAmmo(player, ProjectJoseonCraftModItems.PYEONJEON.get());
+		ItemStack pyeonjeonStack = findAmmo(player, JoseoncraftItems.PYEONJEON.get());
 		boolean hasPyeonjeon = !pyeonjeonStack.isEmpty();
 
 		if (hasTonga) {
@@ -56,7 +54,7 @@ public class GukgungItem extends BowItem {
 				return;
 			}
 
-			if (!ammoStack.is(ProjectJoseonCraftModItems.PYEONJEON.get())) {
+			if (!ammoStack.is(JoseoncraftItems.PYEONJEON.get())) {
 				player.displayClientMessage(
 					Component.literal("퉁아를 들고 있으면 편전만 사용할 수 있습니다!").withStyle(ChatFormatting.GREEN),
 					true
@@ -151,7 +149,7 @@ public class GukgungItem extends BowItem {
 
 	private ItemStack getPreferredAmmo(Player player, boolean hasTonga) {
 		if (hasTonga) {
-			ItemStack pyeonjeon = findAmmo(player, ProjectJoseonCraftModItems.PYEONJEON.get());
+			ItemStack pyeonjeon = findAmmo(player, JoseoncraftItems.PYEONJEON.get());
 			if (!pyeonjeon.isEmpty()) {
 				return pyeonjeon;
 			}

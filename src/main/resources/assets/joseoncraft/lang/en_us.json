@@ -1,4 +1,5 @@
 {
+	"itemGroup.joseoncraft": "PROJECT: JOSEON CRAFT",
 	"item.joseoncraft.dangpa": "Dangpa",
 	"item.joseoncraft.whandodado": "Whandodado",
 	"item.joseoncraft.whando": "Whando",
@@ -6,5 +7,5 @@
 	"item.joseoncraft.hyapdo": "Hyapdo",
 	"item.joseoncraft.pyochang": "Pyochang",
 	"item.joseoncraft.yukmoclub": "Yukmoclub",
-	"item.joseoncraft.gukgung": "gukgung"
+	"item.joseoncraft.gukgung": "Gukgung"
 }

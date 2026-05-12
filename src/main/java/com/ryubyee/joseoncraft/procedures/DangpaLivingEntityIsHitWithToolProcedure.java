@@ -1,6 +1,6 @@
 package com.ryubyee.joseoncraft.procedures;
 
-import com.ryubyee.joseoncraft.init.ProjectJoseonCraftModItems;
+import com.ryubyee.joseoncraft.item.JoseoncraftItems;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -8,14 +8,9 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.BowItem;
-import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ProjectileWeaponItem;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.TridentItem;
+import net.minecraft.world.item.Vanishable;
 
 public class DangpaLivingEntityIsHitWithToolProcedure {
 	public static void execute(Entity sourceentity, Entity entity) {
@@ -24,7 +19,7 @@ public class DangpaLivingEntityIsHitWithToolProcedure {
 
 		// 공격자 당파 쿨다운 200틱
 		if (sourceentity instanceof Player attacker) {
-			attacker.getCooldowns().addCooldown(ProjectJoseonCraftModItems.DANGPA.get(), 200);
+			attacker.getCooldowns().addCooldown(JoseoncraftItems.DANGPA.get(), 200);
 		}
 
 		// 맞은 대상이 플레이어면 손에 든 무기 드롭
@@ -63,22 +58,13 @@ public class DangpaLivingEntityIsHitWithToolProcedure {
 		}
 	}
 
-	private static boolean isWeapon(ItemStack stack) {
-		if (stack == null || stack.isEmpty())
+	private static boolean isWeapon(ItemStack stack) 
+	{
+		if(stack == null || stack.isEmpty())
+		{
 			return false;
-
+		}
 		Item item = stack.getItem();
-
-		return item instanceof SwordItem
-			|| item instanceof AxeItem
-			|| item instanceof TridentItem
-			|| item instanceof BowItem
-			|| item instanceof CrossbowItem
-			|| item instanceof ProjectileWeaponItem
-			|| item == ProjectJoseonCraftModItems.DANGPA.get()
-			|| item == ProjectJoseonCraftModItems.WHANDO.get()
-			|| item == ProjectJoseonCraftModItems.WHANDODADO.get()
-			|| item == ProjectJoseonCraftModItems.HYAPDO.get()
-			|| item == ProjectJoseonCraftModItems.JANGCHANG.get();
+		return item instanceof Vanishable;
 	}
 }

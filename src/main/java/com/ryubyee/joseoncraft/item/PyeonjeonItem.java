@@ -1,7 +1,5 @@
 package com.ryubyee.joseoncraft.item;
 
-import com.ryubyee.joseoncraft.init.ProjectJoseonCraftModItems;
-
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -20,7 +18,7 @@ public class PyeonjeonItem extends ArrowItem {
 		AbstractArrow arrow = super.createArrow(level, stack, shooter);
 
 		if (shooter instanceof Player player) {
-			boolean hasTonga = player.getOffhandItem().is(ProjectJoseonCraftModItems.TONGA.get());
+			boolean hasTonga = player.getOffhandItem().is(JoseoncraftItems.TONGA.get());
 
 			if (hasTonga) {
 				arrow.setBaseDamage(8.0D);
